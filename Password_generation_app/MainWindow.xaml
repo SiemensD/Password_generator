@@ -54,7 +54,7 @@
                         <TextBlock Text="пароль" HorizontalAlignment="Left"  FontSize="15" FontWeight="Bold" Margin="0 0 0 20"/>
                     </Border>
                     <Border Grid.Column="1" Grid.Row="3" Margin="0 20 0 0">
-                        <PasswordBox/>
+                        <TextBlock x:Name="Password" Text="" FontSize="15" FontWeight="Bold"/>
                     </Border>
                     <Border Grid.Column="0" Grid.Row="4" Margin="0 20 0 0">
                         <Button x:Name="saveButton" Content="Сохранить" Style="{StaticResource MaterialDesignFlatButton}" Click="saveButton_Click"/>
