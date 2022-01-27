@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "27e8c8f3-7d8b-4df2-9d2c-4aeb7fe4e8a1": {
+      "ProjectGuid": "27e8c8f3-7d8b-4df2-9d2c-4aeb7fe4e8a1",
+      "DisplayName": "Password_generation_app",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
