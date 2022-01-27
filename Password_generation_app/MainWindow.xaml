@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Password_generation_app"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="550" Width="800">
+        Title="Password generator" Height="550" Width="800">
     <Grid Background="#ffdadada">
-        <Border MinWidth="450" Margin="15" Background="#fff" VerticalAlignment="Center"  Padding="30" MaxWidth="550" CornerRadius="20">
+        <Border MinWidth="500" Margin="15" Background="#fff" VerticalAlignment="Center"  Padding="30" MaxWidth="650" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
@@ -24,26 +24,46 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>                        
                     </Grid.RowDefinitions>
-                    <Border Grid.Column="0" Grid.Row="0">
+                    <Border Grid.Column="0" Grid.Row="0" Margin="0 20 0 0">
                         <TextBlock Text="Дмина пароля:" HorizontalAlignment="Left"  FontSize="15"/>
                     </Border>
-                    <Border Grid.Column="0" Grid.Row="1">
-                        <TextBox x:Name="textBoxNumber" materialDesign:HintAssist.Hint="Диапозон 4 до 8" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <Border Grid.Column="0" Grid.Row="1" Margin="0 20 0 0">
+                        <TextBox x:Name="textBoxNumber" Margin="0 0 20 0" materialDesign:HintAssist.Hint="Диапазон 4 до 8" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     </Border>
-                    <Border Grid.Column="1" Grid.Row="0">
+                    <Border Grid.Column="1" Grid.Row="0" Margin="0 20 0 0">
                         <TextBlock Text="Генерировать из символов:" HorizontalAlignment="Left" FontSize="15"/>
                     </Border>
-                    <Border Grid.Column="1" Grid.Row="1">
-                        <TextBox x:Name="textBoxLeter" materialDesign:HintAssist.Hint="Диапозон 0 до 50" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <Border Grid.Column="1" Grid.Row="1" Margin="0 20 0 0">
+                        <TextBox x:Name="textBoxLeter" materialDesign:HintAssist.Hint="Диапазон 0 до 50" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     </Border>
-                </Grid>
-                
+                    <Border Grid.Column="0" Grid.Row="2" Margin="0 20 0 0">
+                        <StackPanel x:Name="stackCheckBox1" Margin="0 20 0 0">
+                            <CheckBox x:Name="checkBoxNumber" Height="20" Content="Цифры" Margin="0 0 0 10"/>
+                            <CheckBox x:Name="checkBoxSymbol" Height="20" Content="Символы" Margin="0 0 0 20"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="2" Margin="0 20 0 0">
+                        <StackPanel x:Name="stackCheckBox2" Margin="0 20 0 0">
+                            <CheckBox x:Name="checkBoxLowerLit" Height="20" Content="Маленькие буквы" Margin="0 0 0 10"/>
+                            <CheckBox x:Name="checkBoxUpperLit" Height="20" Content="Заглавные буквы" Margin="0 0 0 20"/>
+                        </StackPanel>                        
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="3" Margin="0 20 0 0">
+                        <TextBlock Text="пароль" HorizontalAlignment="Left"  FontSize="15" FontWeight="Bold" Margin="0 0 0 20"/>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="3" Margin="0 20 0 0">
+                        <PasswordBox/>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="4" Margin="0 20 0 0">
+                        <Button x:Name="saveButton" Content="Сохранить" Style="{StaticResource MaterialDesignFlatButton}" Click="saveButton_Click"/>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="4" Margin="0 20 0 0">
+                        <Button x:Name="generButton" Content="Сгенерировать" Style="{StaticResource MaterialDesignFlatDarkBgButton}" Click="generButton_Click"/>
+                    </Border>                    
+                </Grid>                
             </StackPanel>
         </Border>
-        
-        
     </Grid>
 </Window>
