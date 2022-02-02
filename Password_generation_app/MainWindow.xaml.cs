@@ -107,5 +107,29 @@ namespace Password_generation_app
                 File.WriteAllText(saveFileDialog.FileName, Password.Text);
             }
         }
+
+        private void hide_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void hide_window_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
     }
 }
