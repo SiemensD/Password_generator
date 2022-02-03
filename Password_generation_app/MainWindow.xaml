@@ -6,13 +6,26 @@
         xmlns:local="clr-namespace:Password_generation_app"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Password generator" Height="550" Width="800">
-    <Grid Background="#ffdadada">
-        <Border MinWidth="500" Margin="15" Background="#fff" VerticalAlignment="Center"  Padding="30" MaxWidth="650" CornerRadius="20">
+        Title="Password generator" Height="550" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="Transparent">
+    <Grid Background ="Transparent">
+        <Border MinWidth="500" Margin="15" Background="#fff" VerticalAlignment="Center"  Padding="30" MaxWidth="650" CornerRadius="20" MouseDown="Border_MouseDown">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="hide" Style="{StaticResource MaterialDesignIconButton }" Click="hide_Click" >
+                        <Button.Content>
+                            <materialDesign:PackIcon Kind="DockWindow" Height="24" Width="24" />
+                        </Button.Content>
+                    </Button>                    
+                    <Button x:Name="close" Style="{StaticResource MaterialDesignIconButton }" Foreground="#ef5350" Click="close_Click" >
+                        <Button.Content>
+                            <materialDesign:PackIcon Kind="Close" Height="24" Width="24" />
+                        </Button.Content>
+                    </Button>
+
+                </StackPanel>
                 <TextBlock Text="Генератор паролей" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="0 0 0 20"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -27,7 +40,7 @@
                         <RowDefinition></RowDefinition>                        
                     </Grid.RowDefinitions>
                     <Border Grid.Column="0" Grid.Row="0" Margin="0 20 0 0">
-                        <TextBlock Text="Дмина пароля:" HorizontalAlignment="Left"  FontSize="15"/>
+                        <TextBlock Text="Длина пароля:" HorizontalAlignment="Left"  FontSize="15"/>
                     </Border>
                     <Border Grid.Column="0" Grid.Row="1" Margin="0 20 0 0">
                         <TextBox x:Name="textBoxNumber" Margin="0 0 20 0" materialDesign:HintAssist.Hint="Диапазон 4 до 8" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
